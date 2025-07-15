@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom manuplation</title>
+</head>
+<body style = "background-color: #212121; color : #FFFFFF"> 
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langname) {
+        let listitem = document.createElement("li");
+        listitem.innerHTML = `${langname}`;
+        document.querySelector(".language").appendChild(listitem);
+        }
+    
+    addLanguage("Golang")
+    addLanguage("Python")
+    addLanguage("Java")
+
+    //let try in a optimise way
+    function addoptLang(langname){
+        const li = document.createElement("li");
+        const ap = document.createTextNode(langname);
+        li.appendChild(ap);
+
+        document.querySelector(".language").appendChild(li);
+    };
+
+    addoptLang("C++")
+
+    //Edit
+
+    let thirdlang = document.querySelector('li:nth-child(3)')
+    // thirdlang.innerHTML = "C" //this is not optimised
+    const createli = document.createElement("li")
+    createli.textContent = "Assembly"
+    thirdlang.replaceWith(createli)
+
+    let firstlang = document.querySelector('li:nth-child(1)')
+    firstlang.outerHTML = '<li>Typescript</li>' //this is not optimise
+
+    //Remove
+    let LastLang = document.querySelector('li:last-child')
+    LastLang.remove() //remove last element
+
+
+
+</script>
+</html>

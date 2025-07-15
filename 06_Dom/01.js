@@ -58,4 +58,18 @@ myul.querySelectorAll("li")[1].style.color = "white" //we are selecting element 
 let nodelist = myul.querySelectorAll("li")
 
 
-nodelist.forEach( (p) => {p.style.backgroundColor = "skyblue"}); //this works
+nodelist.forEach( (p) => {p.style.backgroundColor = "skyblue"}); //this works we use function here
+
+//js dome notes matches contain and clossest return true and false
+// also there are some other methods like firstchild and parentelement
+
+nodelist[2].style.backgroundColor = "brown"; //in node list we can acces elemt with index value
+//we can convert nodelist to array 
+
+document.getElementsByClassName('listitem') //without . write class name
+
+let temp = document.getElementsByClassName('listitem')
+
+const myArray = Array.from(temp) //converted and store in variable
+
+myArray.forEach((item) => (item.style.backgroundColor = "yellow"))

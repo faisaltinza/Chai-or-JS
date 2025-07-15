@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom new element</title>
+    <style>
+        body{
+            background-color: rgb(51, 51, 51);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thrusday</div>
+    </div>
+
+    <script>
+        let parent = document.querySelector(".parent");
+        console.log(parent);
+        console.log(parent.children); //html collection of child 
+        console.log(parent.children[1]); //selected 2nd child
+        console.log(parent.children[1].innerHTML); //inner Html
+
+        //for each not work but for loops can
+
+        for (let i = 0; i < parent.children.length; i++) {
+            console.log(`loop result ${parent.children[i].innerHTML}`);
+            }
+
+        parent.children[1].style.color = "yellow"
+        console.log(parent.firstElementChild); // we are targetting threw parent is child
+        console.log(parent.lastElementChild); // we are targetting threw parent is child
+
+        const dayOne = document.querySelector(".day");
+        console.log(dayOne.parentElement); // directly select parent without travel full tree
+        console.log(dayOne.nextElementSibling); // directly select sibling without travel full tree
+        console.log(dayOne.previousElementSibling); // directly select previous sibling without travel full tre
+        
+        console.log("Node :",parent.childNodes); // Node name
+    
+    </script>
+</body>
+</html>
