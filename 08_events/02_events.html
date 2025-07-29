@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>two events</title>
+</head>
+<body>
+    <h1>
+        Here we come
+    </h1>
+    <button id="stop">stop</button>
+    <script>
+        let sayMyname = function what() {
+            console.log('Jungle me more nacha');
+            document.querySelector('h1').innerHTML="life is not so easy"
+        }
+        const change = setTimeout(sayMyname,2000)
+
+        document.querySelector('#stop').addEventListener("click",(e) => {clearTimeout(change);console.log('eventstop');
+        })
+    </script>
+</body>
+</html>

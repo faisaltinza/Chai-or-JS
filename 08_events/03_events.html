@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>two events</title>
+</head>
+<body>
+    <h1>
+        Learning is not stipper
+    </h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <script>
+        const printLoop = (str)=>{
+            
+            console.log(str,'this is me', Date.now(),);
+        }
+
+        let Startpoint = null;
+
+        function start() {
+            if(Startpoint === null){
+                Startpoint = setInterval(printLoop, 1000, "againstarted")
+                console.log('iam started');
+                
+            }
+        }
+
+        function stop() {
+            clearInterval(Startpoint);
+            Startpoint=null;
+            console.log('stop');
+            
+        }
+
+        document.querySelector('#stop').addEventListener("click",stop)
+        document.querySelector('#start').addEventListener("click", start)
+
+        start()
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+    <style>
+        .Section{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body style="background-color: grey;">
+    <div>
+        Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+    </div>
+
+    <div class="Section">
+        
+        <h1>here you can see followers</h1>
+        <button>
+            click me
+        </button>
+    </div>
+    <script>
+        let reqUrl = 'https://api.github.com/users/hiteshchoudhary'
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET',reqUrl)
+        
+        document.querySelector('button').addEventListener('click',()=>{
+            xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);//this track our request
+        
+        if (xhr.readyState===4) {
+            let data = JSON.parse(this.responseText)//this command convert string to object in json formate
+            console.log(typeof data.followers);
+            console.log(typeof data);
+            console.log(data.avatar_url);
+            document.querySelector('h1').innerHTML=data.followers
+            const newImage = document.createElement('img')
+            newImage.src=data.avatar_url
+            document.querySelector('div').appendChild(newImage)
+    }};
+         xhr.send()
+        })
+
+
+    </script>
+</body>
+</html>

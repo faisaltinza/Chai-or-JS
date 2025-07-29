@@ -1,0 +1,35 @@
+<!-- Bind this me class react ki sari property ko bind kr deta hai ab bindthis mtlab react ka this hoga -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    
+</head>
+<body>
+   <button>ButtonLive</button>
+   <script>
+    class react {
+        constructor(){
+            this.library = 'React'
+            this.server = 'www.google.com'
+        //requirement
+        document.querySelector('button').addEventListener('click', this.handleClick.bind(this))
+        }
+        handleClick(){
+            console.log('button click');
+            console.log(this);
+            
+            console.log(this.server);
+            console.log(this.library);
+            
+            }
+        
+    }
+
+    const app = new react()
+
+   </script> 
+</body>
+</html>
